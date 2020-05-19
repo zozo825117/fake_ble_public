@@ -1,9 +1,9 @@
-.. fake_ble_public documentation master file, created by
+.. light_ble_public documentation master file, created by
    sphinx-quickstart on Mon May 18 21:54:38 2020.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to fake_ble_public's documentation!
+Welcome to light_ble_public's documentation!
 ===========================================
 
 .. toctree::

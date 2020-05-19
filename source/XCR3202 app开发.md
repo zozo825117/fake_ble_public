@@ -1,8 +1,9 @@
 XCR3202 app开发
 ======================
 
-## IBeaconDemo Light_ble oc源码工程(ios)  
-[zozo825117/ibeacon-tunnel_source_code](https://github.com/zozo825117/ibeacon-tunnel_source_code)
+## light_ble IOS app
+[ble_comm_api_ios](https://github.com/zozo825117/ble_comm_api_ios)
+`IBeaconDemo 可与模拟蓝牙设备实现基本的收发通讯(oc库版本) `
 
 ### 集成方式
 1. 在Linked Frameworks and Libraries中添加BLECommAPI.framework
@@ -179,9 +180,9 @@ XCR3202 app开发
 
 
 
-## 可与模拟蓝牙设备实现基本的收发通讯(android)  
-[zozo825117/ble_comm_api](https://github.com/zozo825117/ble_comm_api)  
-    `此工程是在github上发布的只带blecomm-api.jar的版本`
+## light_ble android app
+[ble_comm_api](https://github.com/zozo825117/ble_comm_api)  
+    `可与模拟蓝牙设备实现基本的收发通讯,此工程是在github上发布的只带blecomm-api.jar的版本`
 
 ### 描述
 `blecomm-api.jar`可实现与模拟蓝牙设备实现基本的收发通讯的基本方法,本样例就是一种基于api的实现方法.

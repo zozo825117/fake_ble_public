@@ -17,9 +17,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'fake_ble_public'
-copyright = '2020, fake_ble'
-author = 'fake_ble'
+project = 'light_ble_public'
+copyright = '2020, light_ble'
+author = 'light_ble'
 
 # The full version, including alpha/beta/rc tags
 release = '0.0.1'
@@ -107,7 +107,7 @@ def setup(app):
         'enable_math': False,
         'enable_inline_math': False,
         'enable_eval_rst': True,
-        'enable_auto_doc_ref': True,
+        'enable_auto_doc_ref': False,
     }, True)
     app.add_transform(AutoStructify)
 
