@@ -7,7 +7,7 @@ Welcome to light_ble_public's documentation!
 ===========================================
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
    :caption: XCR3203应用
 
    XCR3203简介.md
@@ -15,7 +15,7 @@ Welcome to light_ble_public's documentation!
    XCR3203应用文档.md
    
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
    :caption: XCR3203开发
   
    XCR3203开发文档.md
