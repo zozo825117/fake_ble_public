@@ -7,23 +7,36 @@ Welcome to light_ble_public's documentation!
 ===========================================
 
 .. toctree::
-   :maxdepth: 2
-   :caption: XCR3203应用
+   :maxdepth: 1
+   :caption: XCR3203简介
 
    XCR3203简介.md
 
+.. toctree::
+   :maxdepth: 1
+   :caption: XCR3203应用
+
    XCR3203应用文档.md
+
+   RGB demo 使用说明.md
    
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: XCR3203开发
   
    XCR3203开发文档.md
 
-   XCR3202 app开发.md
+   light_ble(mcu)库使用说明.md
 
-   
+.. toctree::
+   :maxdepth: 1
+   :caption: light_ble app开发
 
+   XCR3203 app开发.md
+
+   light_ble(ios)库使用说明.md
+
+   light_ble(android)库使用说明.md
 
 
 Indices and tables

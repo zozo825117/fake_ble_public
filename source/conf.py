@@ -56,16 +56,30 @@ exclude_patterns = []
 #
 # html_theme = 'alabaster'
 
+# import sphinx_rtd_theme
+# html_theme = "sphinx_rtd_theme"
+# html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+
+#---sphinx-themes-----
+# import guzzle_sphinx_theme
+
+# html_theme_path = guzzle_sphinx_theme.html_theme_path()
+# html_theme = 'guzzle_sphinx_theme'
+
+# Register the theme as an extension to generate a sitemap.xml
+# extensions.append("guzzle_sphinx_theme")
+
+#---sphinx-themes-----
+html_theme = 't3SphinxThemeRtd'
+import t3SphinxThemeRtd
+html_theme_path = [t3SphinxThemeRtd.get_html_theme_path()]
+
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 # html_static_path = ['_static']
 
 master_doc = 'contents'
-
-import sphinx_rtd_theme
-html_theme = "sphinx_rtd_theme"
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 
 # from recommonmark.parser import CommonMarkParser

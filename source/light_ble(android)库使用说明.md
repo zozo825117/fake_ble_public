@@ -1,196 +1,14 @@
-XCR3202 app开发
-======================
-
-## light_ble IOS app
-[ble_comm_api_ios](https://github.com/zozo825117/ble_comm_api_ios)
-`IBeaconDemo 可与模拟蓝牙设备实现基本的收发通讯(oc库版本) `
-
-### 集成方式
-1. 在Linked Frameworks and Libraries中添加BLECommAPI.framework
-2. 导入头文件 `#import <BLECommAPI/BLECommAPI.h>`
-3. 实现IBeaconListener的协议 `@interface ViewController : UIViewController <IBeaconListener>`
-4. 绑定listener `IBeaconManager.sharedInstance.listener = self;`
-5. 开始编写业务逻辑
-
-### 方法说明
-#### IBeaconManager
-* 开始扫描
-
-  `- (void)startScan;`
-
-  ```
-  [IBeaconManager.sharedInstance startScan];
-  ```
-
-* 指定扫描
-  
-  `- (void)startScanWith:(NSString *)name;`
-
-  ```
-  [IBeaconManager.sharedInstance startScanWith:name];
-  ```
-
-* 停止扫描
-  
-  `- (void)stopScan;`
-
-  ```
-  [IBeaconManager.sharedInstance stopScan];
-  ```
-
-* 连接指定设备
-  
-  `- (void)connect:(Beacon*) beacon token: (NSString*) token timeout: (int) timeout;`
-
-  ```
-  NSString *tokenHex = @"010203040506";
-  [IBeaconManager.sharedInstance connect:self.beacon token:tokenHex timeout:10];
-  ```
-
-* 断开连接
-  
-  `- (void)disconnect;`
-
-  ```
-  [IBeaconManager.sharedInstance disconnect];
-  ```
-
-* 向设备写数据
-  
-  `- (void)write:(NSData *)data;`
-
-  ```
-  NSString *msg = @"hello";
-  [IBeaconManager.sharedInstance write:[msg dataUsingEncoding:NSUTF8StringEncoding]];
-  ```
-
-#### IBeaconListener
-* 扫描开始回调
-  ```
-    /**
-    * start scan
-    * @param result: 扫描结果
-    * @param error: 错误值
-    */
-    @required
-    -(void) onScanStart:(bool) result error:(BLEError) error;
-  ```
-
-* 扫描成功回调
-  ```
-    /**
-    * scan success
-    * @param beacon: 扫描到的设备
-    */
-    @required
-    -(void) onScanSuccess:(Beacon*) beacon;
-  ```
-
-* 操作执行成功回调
-  ```
-    /**
-    * ble comm success
-    * @param Op :
-    *             OpAdv : start advertisement
-    *             OpConnReq : connection request
-    *             OpConnResp : connection resp
-    *             OpDisconnReq : disconnect
-    *             OpTran : write data
-    */
-  @required
-  -(void) onOperationStartSuccess:(int) op;
-  ```
-
-* 操作执行失败回调
-  ```
-    /**
-    * ble comm failed
-    * @param Op :
-    *             OpAdv : start advertisement
-    *             OpConnReq : connection request
-    *             OpConnResp : connection resp
-    *             OpDisconnReq : disconnect
-    *             OpTran : write data
-    * @param errorCode :  BLE_ERROR_INVALID_PARAMETER or BLE_ERROR_INVALID_OPERATION
-    */
-  ```
-
-* 开始连接回调
-  ```
-    /**
-    * connect start
-    * @param beacon: target beacon
-    * @param error: error
-    */
-    @required
-    -(void) onConnectStart:(Beacon*) beacon error:(BLEError) error;
-  ```
-
-* 连接成功回调
-  ```
-    /**
-    * connect success
-    * @param beacon: target beacon
-    */
-    @required
-    -(void) onConnectSuccess:(Beacon*) beacon;
-  ```
-
-* 断开连接回调
-  ```
-    /**
-    * disconnect
-    * @param beacon: target beacon
-    * @param error: error
-    */
-    @required
-    -(void) onDisconnect:(Beacon*) beacon error:(BLEError) error;
-  ```
-
-* 本机蓝牙状态更新回调
-  ```
-    /**
-    * ble status update
-    * @param beacon: target beacon
-    * @param status: new device status
-    */
-    @required
-    -(void) onBLEStatusUpdate:(BLEStatus) status;
-  ```
-* 数据接收回调
-  ```
-    /**
-    * received data
-    * @param data: received data
-    */
-    @required
-    -(void) onReceive:(NSData*) data;
-  ```
-
-* 发送成功回调
-  ```
-    /**
-    * send success with index
-    * @param data: received data
-    * @param index: index of sended data
-    */
-    @required
-    -(void) onSendSuccess:(int) index;
-  ```
+light_ble(android)库使用说明
+====================
 
 
-
-## light_ble android app
-[ble_comm_api](https://github.com/zozo825117/ble_comm_api)  
-    `可与模拟蓝牙设备实现基本的收发通讯,此工程是在github上发布的只带blecomm-api.jar的版本`
-
-### 描述
+## 描述
 `blecomm-api.jar`可实现与模拟蓝牙设备实现基本的收发通讯的基本方法,本样例就是一种基于api的实现方法.
 
 ![](http://www.zozo825117.cn:10080/fake_ble/ble_comm_api/app_1.png)
 
 
-### 要求
+## 要求
 * android 最低支持的版本:   
   Android 5.1 (LOLLIPOP_MR1  API22)
 * ble peripheral 支持
@@ -218,7 +36,7 @@ XCR3202 app开发
     }
     ```
 
-### 特性
+## 特性
 - [x] bleStartAdvertisementSimulate
 - [x] bleStopAdvertisement
 - [x] bleStartConnect
@@ -228,13 +46,13 @@ XCR3202 app开发
 - [x] onStartSuccess
 - [x] onStartFailure
 
-### TODO
+## TODO
 - [ ] onSendSta
 
-### Project Organization
-![](http://www.zozo825117.cn:10080/fake_ble/ble_comm_api/app_structure.png)
+## Project Organization
+![](http://www.zozo825117.cn:10080/light_ble_public/pic_bed/app_structure.png)
 
-### Useage
+## Useage
 1. 在bulid.gradle中加入`blecomm-api.jar`的依赖
 2. 需要在manifest中加入蓝牙相关权限
 3. 需要在manifest中注册com.wearlink.blecomm.BleService服务
@@ -245,7 +63,7 @@ XCR3202 app开发
 6. 在此接口的`onServiceOpen`方法中通过如下方法获取主要方法接口:
   `bleService.getBleCommMethod();`
 
-### 主要方法
+## 主要方法
 由BleCommMethod接口提供:
 ```
 /**
@@ -304,7 +122,7 @@ public interface BleCommMethod {
 
 }
 ```
-### 主要事件回调
+## 主要事件回调
 由OnBleCommProgressListener接口提供,客户可根据需求重写相应方法:
 ```
 /**
@@ -371,7 +189,7 @@ public interface OnBleCommProgressListener {
 }
 ```
 
-### 操作模式(状态机)
+## 操作模式(状态机)
 ```
     /**
      * operation mode: advertisement.
@@ -402,7 +220,7 @@ public interface OnBleCommProgressListener {
      */
     static final byte OPER_CLOSE = 0x06;
 ```
-### 回调函数返回状态
+## 回调函数返回状态
 ```
     /**
      * No Error occurred
@@ -430,8 +248,8 @@ public interface OnBleCommProgressListener {
     static final byte BLE_ERROR_CONNECTION_DISCONNECTED = 0x04;
 ```
 
-### 更新
-#### V02
+## 更新
+### V02
 1.  增加新的方法
 ```
     /**
